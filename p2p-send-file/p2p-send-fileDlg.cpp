@@ -320,6 +320,7 @@ void Cp2psendfileDlg::BeginWork()
 		_fseeki64(pRead, 0, SEEK_SET);
 	}
 	
+	memset(&m_engineConf, 0, sizeof(m_engineConf));
 	m_engineConf.login_domain = m_strDomain.GetBuffer(0);
 	m_engineConf.login_port = m_usLoginPort;
 	m_engineConf.lan_search_port = m_usLanPort;
