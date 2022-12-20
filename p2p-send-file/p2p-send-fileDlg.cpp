@@ -5,6 +5,7 @@
 #include "afxdialogex.h"
 #include <sys/timeb.h>
 
+
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #endif
@@ -346,7 +347,7 @@ void Cp2psendfileDlg::BeginWork()
 	memset(&ctx, 0, sizeof(kkp2p_connect_ctx_t));
 	strncpy(ctx.peer_id, m_strPeerId.GetBuffer(0), 32);
 	ctx.encrypt_data = 0;
-	ctx.timeout = 1000;
+	ctx.timeout = 3000;
 	ctx.func = NULL;
 	ctx.func_param = NULL;
 
