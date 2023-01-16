@@ -335,7 +335,7 @@ void Cp2psendfileDlg::BeginWork()
 	}
 
 	// error level
-	kkp2p_switch_log_level(kkp2p_engine, 1);
+	kkp2p_switch_log_level(kkp2p_engine, 4);
 
 	// connect mode
 	CString strMode;
