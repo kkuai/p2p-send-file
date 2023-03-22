@@ -346,6 +346,10 @@ void Cp2psendfileDlg::BeginWork()
 	kkp2p_connect_ctx_t ctx;
 	memset(&ctx, 0, sizeof(kkp2p_connect_ctx_t));
 	strncpy(ctx.peer_id, m_strPeerId.GetBuffer(0), 32);
+
+	// creat alike tcp channel
+	ctx.channel_type = KKP2P_TCP_CHANNEL;
+
 	ctx.encrypt_data = 0;
 	ctx.timeout = 3000;
 	ctx.func = NULL;
