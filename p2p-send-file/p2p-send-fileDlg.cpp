@@ -1,4 +1,4 @@
-﻿#include "pch.h"
+#include "pch.h"
 #include "framework.h"
 #include "p2p-send-file.h"
 #include "p2p-send-fileDlg.h"
@@ -180,8 +180,8 @@ BOOL Cp2psendfileDlg::OnInitDialog()
 
 	SetIcon(m_hIcon, TRUE);			
 	//SetIcon(m_hIcon, FALSE);
-	m_loginDomain.SetWindowText(_T("124.71.217.198"));
-	m_loginPort.SetWindowText(_T("3080"));
+	m_loginDomain.SetWindowText(_T("112.74.167.65"));
+	m_loginPort.SetWindowText(_T("4080"));
 	m_lanPort.SetWindowText(_T("3549"));
 	m_peerId.SetWindowText(_T("kkuai-ipc-00001"));
 	m_connectType.EnableWindow(FALSE);
@@ -325,17 +325,12 @@ void Cp2psendfileDlg::BeginWork()
 	m_engineConf.login_domain = m_strDomain.GetBuffer(0);
 	m_engineConf.login_port = m_usLoginPort;
 	m_engineConf.lan_search_port = m_usLanPort;
-	m_engineConf.log_path = NULL;
-	m_engineConf.max_log_size = 1024 * 1024;
 
 	kkp2p_engine_t* kkp2p_engine = kkp2p_engine_init(&m_engineConf, 10000);
 	if (kkp2p_engine == NULL) {
 		AfxMessageBox(A2T("kkp2p_engine_init error"));
 		return;
 	}
-
-	// error level
-	kkp2p_switch_log_level(kkp2p_engine, 4);
 
 	// connect mode
 	CString strMode;
